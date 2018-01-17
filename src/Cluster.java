@@ -7,7 +7,6 @@ import java.util.List;
  */
 public class Cluster {
     private List<Point> items;
-    private int clusterNum;
 
     /**
      * constructor.
@@ -17,9 +16,6 @@ public class Cluster {
     public Cluster(Point firstItem) {
         this.items = new ArrayList<Point>();
         this.items.add(firstItem);
-
-        // -1 will note that the cluster has no number yet
-        this.clusterNum = -1;
     }
 
     /**
@@ -38,33 +34,6 @@ public class Cluster {
      */
     public void mergeClusterWith(Cluster other) {
         this.items.addAll(other.getItems());
-    }
-
-    /**
-     * check if this cluster has a unique number.
-     *
-     * @return false if the number is -1 and true otherwise.
-     */
-    public boolean hasClusterNumber() {
-        return this.clusterNum != -1;
-    }
-
-    /**
-     * setter for the unique number of the cluster.
-     *
-     * @param clusterNum number of the cluster.
-     */
-    public void setClusterNum(int clusterNum) {
-        this.clusterNum = clusterNum;
-    }
-
-    /**
-     * getter for the cluster's number.
-     *
-     * @return int.
-     */
-    public int getClusterNum() {
-        return clusterNum;
     }
 
     /**

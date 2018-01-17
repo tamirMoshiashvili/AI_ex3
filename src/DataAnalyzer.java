@@ -30,8 +30,8 @@ public class DataAnalyzer {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                int x = Integer.parseInt(parts[0]);
-                int y = Integer.parseInt(parts[1]);
+                double x = Double.parseDouble(parts[0]);
+                double y = Double.parseDouble(parts[1]);
                 this.points.add(new Point(x, y));
             }
 

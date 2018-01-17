@@ -46,7 +46,7 @@ public abstract class BaseAlgorithm {
 
             // create similarity matrix
             for (int i = 0; i < len; i++) {
-                for (int j = 1; j < len && i < j; j++) {
+                for (int j = i + 1; j < len; j++) {
 
                     // calculate similarity of cluster-i and cluster-j
                     Cluster a = this.clusters.get(i);
@@ -67,12 +67,6 @@ public abstract class BaseAlgorithm {
             Cluster b = this.clusters.get(jMax);
             a.mergeClusterWith(b);
             this.clusters.remove(jMax);
-
-            // check for assigning cluster number
-            if (!a.hasClusterNumber()) {
-                a.setClusterNum(currentClusterNum);
-                ++currentClusterNum;
-            }
 
             len = this.clusters.size();
         }

@@ -36,7 +36,7 @@ public class java_ex3 {
             for (Point item : items) {
                 for (Cluster cluster : clusters) {
                     if (cluster.containsItem(item)) {
-                        writer.write(cluster.getClusterNum());
+                        writer.write(Integer.toString(clusters.indexOf(cluster) + 1));
                         writer.write("\n");
                         break;
                     }
